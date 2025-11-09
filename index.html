@@ -39,7 +39,7 @@
             text-align: center;
             animation: fadeIn 3s ease-in-out;
             z-index: 1;
-            color: white;
+            color: rgba(24, 22, 22, 0.582);
         }
         
         .button-container {
@@ -120,7 +120,9 @@
         .heart:after {
             left: 50px;
             top: 0;
-        }
+        } 
+     
+        
         
         @keyframes fadeIn {
             0% {
@@ -141,20 +143,30 @@
             }
         }
         
-        .button {
-            margin-top: 30px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #FFFFFF;
-            background-color: #fc4242;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+       .button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    color: #402dec;
+    background-color: #b7c4ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: heartbeat 25s infinite;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
         
         .button:hover {
-            background-color: #f83e3e;
+            background-color: #f55454;
         }
         
         .modal {
@@ -218,6 +230,23 @@
             margin-left: 10px;
             vertical-align: middle;
         }
+      .click-text {
+    position: absolute;
+    bottom: 45px;
+    left: 10px;
+    color: #ff4133; 
+    font-size: 1.2em;
+    font-weight: bold;
+    animation: moveUpDown 3s ease-in-out infinite alternate;
+    z-index: 2;
+}
+
+/* Up–Down Animation */
+@keyframes moveUpDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
     </style>
 </head>
 
@@ -237,7 +266,8 @@
         <h2>You make my world brighter, and my heart beats for you. 💖</h2>
     </div>
     <div class="button-container">
-        <button class="button" onclick="startAudio()">Yes, I Will!</button>
+        <div class="click-text">Click kare👇</div>
+        <button class="button" onclick="startAudio()">🔗Yes, I Will!</button>
     </div>
 
     <div id="imageModal" class="modal">
@@ -374,3 +404,4 @@
 </body>
 
 </html>
+
